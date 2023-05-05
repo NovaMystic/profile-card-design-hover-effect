@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background-color: #0f1010;
+  background-image: linear-gradient(160deg, #0f1010 0%, #0c0e29 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  background: url(./images/snow.png);
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #0f1010;
+  background-image: linear-gradient(160deg, #080b0e 0%, #0c1429 100%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  padding: 30px 0 40px;
+  border-radius: 20px;
+  width: 250px;
+}
+.image {
+  display: inline-block;
+  width: 130px;
+  height: 130px;
+  margin-bottom: 50px;
+  z-index: 1;
+  position: relative;
+}
+.image::before {
+  content: "";
+  width: 100%;
+  height: 0;
+  border-radius: 50%;
+  background-color: #3b4c7a;
+  background-image: linear-gradient(160deg, #3b4c7a 0%, #0c233b 100%);
+  position: absolute;
+  z-index: -2;
+  bottom: 135%;
+  right: 0;
+  left: 0;
+  opacity: 0.9;
+  transform: scale(3);
+  transition: all 0.3s linear 0s;
+}
+.card:hover .image::before {
+  height: 100%;
+}
+.image::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #3b4c7a;
+  background-image: linear-gradient(160deg, #3b4c7a 0%, #0c233b 100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: all 0.9s ease 0s;
+}
+.card:hover .image img {
+  box-shadow: 0 0 0 14px #f7f5ec;
+  transform: scale(0.7);
+}
+.name {
+  color: #fff;
+}
+.title {
+  display: block;
+  margin-top: -15px;
+  font-size: 15px;
+  color: #838383;
+  text-transform: capitalize;
+}
+.social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #3b4c7a;
+  background-image: linear-gradient(160deg, #3b4c7a 0%, #0c233b 100%);
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  transition: all 0.5s ease 0s;
+}
+.card:hover .social {
+  bottom: 0;
+}
+.social li {
+  display: inline-block;
+}
+.social li i {
+  display: block;
+  padding: 10px;
+  font-size: 17px;
+  color: white;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.social li i:hover {
+  color: #6983cb;
+  background-color: #f7f5ec;
+}
